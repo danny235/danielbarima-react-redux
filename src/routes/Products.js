@@ -59,7 +59,7 @@ const Products = () => {
     fetchCategories();
     fetchProducts();
     return;
-  }, [fetchCategories, fetchProducts]);
+  }, []);
 
   return (
     <div style={styles.container}>
