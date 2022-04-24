@@ -24,7 +24,7 @@ const ProductDetail = () => {
   useEffect(() => {
     fetchProduct();
     return () => dispatch(clearProduct());
-  }, [fetchProduct, dispatch, clearProduct]);
+  }, []);
   return (
     <div style={styles.container}>
       {Object.keys(product).length === 0 ? (
