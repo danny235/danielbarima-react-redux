@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productReducer);
   
-  const fetchProducts = async () => {
+  const fetchProduct = async () => {
     try {
       const response = await axios.get(
         `https://aveosoft-react-assignment.herokuapp.com/products/${productId}`
@@ -22,9 +22,9 @@ const ProductDetail = () => {
     }
   };
   useEffect(() => {
-    fetchProducts();
+    fetchProduct();
     return () => dispatch(clearProduct());
-  }, []);
+  }, [fetchProduct, dispatch, clearProduct]);
   return (
     <div style={styles.container}>
       {Object.keys(product).length === 0 ? (
